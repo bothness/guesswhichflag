@@ -7,7 +7,7 @@
 	import Icon from "./Icon.svelte";
 	
 	const flags = csvParse(flags_raw);
-	const zeroday = Math.floor(new Date("2022-04-03").getTime() / (60 * 60 * 24 * 1000));
+	const zeroday = Math.floor(new Date("2022-04-04").getTime() / (60 * 60 * 24 * 1000));
 	const today = Math.floor(new Date().getTime() / (60 * 60 * 24 * 1000));
 	const midnight = new Date();
 	midnight.setHours(24,0,0,0);
