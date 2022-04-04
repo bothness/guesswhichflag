@@ -128,8 +128,8 @@ ${game.score} out of ${turns} flags
 ${game.questions.map(q => q.icon).join('')}
 ${game.answers.map(a => a ? '✔️' : '❌').join('')}
 https://guesswhichflag.netlify.app`;
-		navigator.clipboard.writeText(str);
-		alert("Copied: " + str);
+		navigator.clipboard.writeText(str)
+		.then(() => alert("Copied: " + str));
 	}
 
 	function setHistory() {
