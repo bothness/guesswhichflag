@@ -163,18 +163,18 @@ https://guesswhichflag.netlify.app`;
 	{#if game.status == 'start'}
 	<div class="flag-container">
 		{#each shuffle(flags).slice(0,120) as flag}
-		<div class="flag-mini"><img src="https://twemoji.maxcdn.com/v/latest/svg/{flag.unicode}.svg" alt="{flag.unicode}"/></div>
+		<div class="flag-mini"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/{flag.unicode}.svg" alt="{flag.unicode}"/></div>
 		{/each}
 	</div>
 	<button on:click={new_dailygame} style:margin-top="10px">Daily game</button>
 	<button on:click={new_game}>Practice game</button>
 	{:else if game.status == 'guess'}
-	<div class="flag"><img src="https://twemoji.maxcdn.com/v/latest/svg/{game.questions[game.turn].unicode}.svg" alt="{game.questions[game.turn].unicode}"/></div>
+	<div class="flag"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/{game.questions[game.turn].unicode}.svg" alt="{game.questions[game.turn].unicode}"/></div>
 	{#each game.options[game.turn] as option}
 	<button on:click={() => guess(option.iso)}>{option.name}</button>
 	{/each}
 	{:else if game.status == 'right' || game.status == 'wrong'}
-	<div class="flag"><img src="https://twemoji.maxcdn.com/v/latest/svg/{game.questions[game.turn - 1].unicode}.svg" alt="{game.questions[game.turn - 1].unicode}"/></div>
+	<div class="flag"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/{game.questions[game.turn - 1].unicode}.svg" alt="{game.questions[game.turn - 1].unicode}"/></div>
 	{game.status == 'right' ? 'Right!' : 'Wrong...'} It was {game.questions[game.turn - 1].name}.
 	{#if game.turn < turns}
 	<button on:click={() => game.status = 'guess'}>Next turn</button>
@@ -187,7 +187,7 @@ https://guesswhichflag.netlify.app`;
 	{#if game.mode != 'daily'}(practice mode){/if}
 <div class="flag-container">
 		{#each game.answers as answer, i}
-		<div class="flag-mini"><img src="https://twemoji.maxcdn.com/v/latest/svg/{game.questions[i].unicode}.svg" alt="{game.questions[i].unicode}"/><br/>{answer ? '✔️' : '❌'}</div>
+		<div class="flag-mini"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/{game.questions[i].unicode}.svg" alt="{game.questions[i].unicode}"/><br/>{answer ? '✔️' : '❌'}</div>
 		{/each}
 	</div>
 	<button on:click={share}>Share your score <Icon type="share"/></button>
