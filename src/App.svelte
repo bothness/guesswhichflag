@@ -163,7 +163,7 @@ https://guesswhichflag.netlify.app`;
 	{#if game.status == 'start'}
 	<div class="flag-container">
 		{#each shuffle(flags).slice(0,120) as flag}
-		<div class="flag-mini"><img src="https://twemoji.maxcdn.com/v/latest/svg/{flag.unicode}.svg" alt="{flag.unicode}"/></div>
+		<div class="flag-mini"><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/{flag.unicode}.svg" alt="{flag.unicode}"/></div>
 		{/each}
 	</div>
 	<button on:click={new_dailygame} style:margin-top="10px">Daily game</button>
